@@ -34,6 +34,18 @@ local function set_keymap()
 
 	-- Supported by bufferline
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
+	map("n", keys.prevBuffer, ":BufferLineCyclePrev<CR>", option)
+	map("n", keys.nextBuffer, ":BufferLineCycleNext<CR>", option)
+	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
+	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
+	map("n", keys.pickBuffer2, "<Cmd>BufferLineGoToBuffer 2<CR>", option)
+	map("n", keys.pickBuffer3, "<Cmd>BufferLineGoToBuffer 3<CR>", option)
+	map("n", keys.pickBuffer4, "<Cmd>BufferLineGoToBuffer 4<CR>", option)
+	map("n", keys.pickBuffer5, "<Cmd>BufferLineGoToBuffer 5<CR>", option)
+	map("n", keys.pickBuffer6, "<Cmd>BufferLineGoToBuffer 6<CR>", option)
+	map("n", keys.pickBuffer7, "<Cmd>BufferLineGoToBuffer 7<CR>", option)
+	map("n", keys.pickBuffer8, "<Cmd>BufferLineGoToBuffer 8<CR>", option)
+	map("n", keys.pickBuffer9, "<Cmd>BufferLineGoToBuffer 9<CR>", option)
 
 	-- Supported by nvim-tree
 	map("n", keys.file_explorer, ":Neotree position=left source=filesystem action=show toggle=true<CR>", option)

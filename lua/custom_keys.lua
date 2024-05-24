@@ -14,6 +14,18 @@ return {
 	-- View other usage of the plugin: https://github.com/akinsho/bufferline.nvim
 	-- Use the shortcut to pick a buffer tab.
 	pick_tab = "<leader>tt",
+	nextBuffer = "tab",
+	prevBuffer = "s-tab",
+	closeBuffer = "<C-w>",
+	pickBuffer1 = "<leader>1",
+	pickBuffer2 = "<leader>2",
+	pickBuffer3 = "<leader>3",
+	pickBuffer4 = "<leader>4",
+	pickBuffer5 = "<leader>5",
+	pickBuffer6 = "<leader>6",
+	pickBuffer7 = "<leader>7",
+	pickBuffer8 = "<leader>8",
+	pickBuffer9 = "<leader>9",
 
 	-- View other usage of the plugin: https://github.com/nvim-neo-tree/neo-tree.nvim
 	-- Use the shortcut to open or close file explorer.
