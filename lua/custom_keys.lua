@@ -40,6 +40,7 @@ return {
 	live_grep = "<leader>gg",
 	search_cursor = "<leader>cc",
 	find_buffer = "<leader>bb",
+	keymaps = "<leader>sk",
 	-- Use the to close telescope window. <C-c> is the default setting, can't edit it here.
 	-- close_telescope  = "<C-c>",
 
