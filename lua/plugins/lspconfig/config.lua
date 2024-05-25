@@ -39,4 +39,5 @@ return function()
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		end,
 	})
+	
 end

@@ -14,8 +14,6 @@ return {
 	-- View other usage of the plugin: https://github.com/akinsho/bufferline.nvim
 	-- Use the shortcut to pick a buffer tab.
 	pick_tab = "<leader>tt",
-	nextBuffer = "tab",
-	prevBuffer = "s-tab",
 	closeBuffer = "<C-w>",
 	pickBuffer1 = "<leader>1",
 	pickBuffer2 = "<leader>2",

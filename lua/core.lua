@@ -34,8 +34,6 @@ local function set_keymap()
 
 	-- Supported by bufferline
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
-	map("n", keys.prevBuffer, ":BufferLineCyclePrev<CR>", option)
-	map("n", keys.nextBuffer, ":BufferLineCycleNext<CR>", option)
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
 	map("n", keys.pickBuffer2, "<Cmd>BufferLineGoToBuffer 2<CR>", option)
