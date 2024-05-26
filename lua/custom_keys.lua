@@ -68,7 +68,7 @@ return {
 	resize_right = "<C-A-l>",
 
 	-- View other usage of the plugin: https://github.com/neovim/nvim-lspconfig
-	-- Goto
+	-- Goto  I use the telescope type gr
 	goto_definition = "gd",
 	goto_references = "gr",
 	goto_declaration = "gD",

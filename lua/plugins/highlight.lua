@@ -25,6 +25,10 @@ return {
 					end,
 					additional_vim_regex_highlighting = false,
 				},
+
+				fold={
+					enable=true,
+				},
 			})
 
 			-- let it to use 'markdown' parser for mdx filetype.

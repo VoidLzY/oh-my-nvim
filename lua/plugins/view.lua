@@ -67,6 +67,9 @@ return {
 			require("aerial").setup({
 				lazy_load = false,
 				open_automatic = require("custom_opts").auto_open_outline,
+				manage_folds=true,
+				link_folds_to_tree=true,
+				link_tree_to_folds=true,
 			})
 		end,
 	},

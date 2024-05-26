@@ -20,8 +20,8 @@ return function()
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", require("custom_keys").goto_declaration, vim.lsp.buf.declaration, opts)
-			vim.keymap.set("n", require("custom_keys").goto_definition, vim.lsp.buf.definition, opts)
-			vim.keymap.set("n", require("custom_keys").goto_references, vim.lsp.buf.references, opts)
+			vim.keymap.set("n", require("custom_keys").goto_definition, require('telescope.builtin').lsp_definitions, opts)
+			vim.keymap.set("n", require("custom_keys").goto_references,require('telescope.builtin').lsp_references, opts)
 			vim.keymap.set("n", require("custom_keys").goto_impl, vim.lsp.buf.implementation, opts)
 			vim.keymap.set("n", require("custom_keys").lsp_rename, vim.lsp.buf.rename, opts)
 			vim.keymap.set("n", require("custom_keys").format, function()
