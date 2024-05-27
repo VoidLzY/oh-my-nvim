@@ -1,9 +1,21 @@
 return {
-	{	
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 		config = function()
-			require("telescope").setup({})
+			require("telescope").setup({
+				defaults = {
+					file_ignore_patterns = {
+						"node_modules",
+						".git/",
+						"dist/",
+						"build/",
+						"%.lock",
+						"%.DS_Store",
+						"%.meta",
+					},
+				},
+			})
 
 			local option = { noremap = true, silent = true }
 

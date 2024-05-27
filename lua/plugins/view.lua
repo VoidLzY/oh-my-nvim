@@ -70,6 +70,7 @@ return {
 				manage_folds=true,
 				link_folds_to_tree=true,
 				link_tree_to_folds=true,
+				autojump=true,
 			})
 		end,
 	},

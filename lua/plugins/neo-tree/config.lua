@@ -127,7 +127,7 @@ return function()
                     --"node_modules"
                 },
                 hide_by_pattern = { -- uses glob style patterns
-                    --"*.meta",
+                    "*.meta",
                     --"*/src/*/tsconfig.json",
                 },
                 always_show = { -- remains visible even if other settings would normally hide it
