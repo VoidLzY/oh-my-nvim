@@ -11,6 +11,13 @@ local function set_keymap()
 	map("n", keys.jump_up_window, "<C-W>k", option)
 	map("n", keys.jump_right_window, "<C-W>l", option)
 
+	option.desc="向下拆分窗口"
+	map("n",keys.split_down_window,":split<CR>",option)
+	option.desc="向左拆分窗口"
+	map("n",keys.split_right_window,":vsplit<CR>",option)
+	option.desc="关闭当前窗口"
+	map("n",keys.colse_window,":confirm q<CR>",option)
+
 	vim.cmd([[
     " press esc to cancel search highlight
     nnoremap <silent> <Esc> :nohlsearch<CR>:echo<CR>
@@ -33,6 +40,7 @@ local function set_keymap()
 	]])
 
 	-- Supported by bufferline
+	option.desc=nil
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)

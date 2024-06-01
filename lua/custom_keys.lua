@@ -11,10 +11,13 @@ return {
 	jump_up_window = "<C-k>",
 	jump_down_window = "<C-j>",
 
+	split_right_window = "<leader>ll",
+	split_down_window = "<leader>jj",
+	colse_window = "<A-w>",
 	-- View other usage of the plugin: https://github.com/akinsho/bufferline.nvim
 	-- Use the shortcut to pick a buffer tab.
 	pick_tab = "<leader>tt",
-	closeBuffer = "<A-w>",
+	closeBuffer = "<leader>w",
 	pickBuffer1 = "<leader>1",
 	pickBuffer2 = "<leader>2",
 	pickBuffer3 = "<leader>3",
@@ -77,5 +80,5 @@ return {
 	-- Use the shortcut to rename the code symbols.
 	lsp_rename = "<leader>re",
 	-- Use the shortcut to format your codes.
-	format = "<leader>ft",
+	format = "<C-s>",
 }
