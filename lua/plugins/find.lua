@@ -16,7 +16,6 @@ return {
 					},
 				},
 			})
-
 			local option = { noremap = true, silent = true }
 
 			local keys = require("custom_keys")

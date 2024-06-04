@@ -66,7 +66,6 @@ vim.opt.wildmenu = true -- on TAB, complete options for system command
 vim.opt.wildignore =
 	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
 
--- Only show cursorline in the current window and in normal mode.
 -- vim.cmd([[
 --   augroup cline
 --       au!
