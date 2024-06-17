@@ -1,5 +1,6 @@
 local keys = require("custom_keys")
 local opts = require("custom_opts")
+local pjtCfgs=require("other.projectInit")
 
 -- Setup keymapping
 local function set_keymap()
@@ -11,12 +12,12 @@ local function set_keymap()
 	map("n", keys.jump_up_window, "<C-W>k", option)
 	map("n", keys.jump_right_window, "<C-W>l", option)
 
-	option.desc="向下拆分窗口"
-	map("n",keys.split_down_window,":split<CR>",option)
-	option.desc="向左拆分窗口"
-	map("n",keys.split_right_window,":vsplit<CR>",option)
-	option.desc="关闭当前窗口"
-	map("n",keys.colse_window,":confirm q<CR>",option)
+	option.desc = "向下拆分窗口"
+	map("n", keys.split_down_window, ":split<CR>", option)
+	option.desc = "向左拆分窗口"
+	map("n", keys.split_right_window, ":vsplit<CR>", option)
+	option.desc = "关闭当前窗口"
+	map("n", keys.colse_window, ":confirm q<CR>", option)
 
 	vim.cmd([[
     " press esc to cancel search highlight
@@ -40,7 +41,7 @@ local function set_keymap()
 	]])
 
 	-- Supported by bufferline
-	option.desc=nil
+	option.desc = nil
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
@@ -163,8 +164,35 @@ local function set_transparency()
 end
 
 -- Set up auto command
-local function set_autocmd() end
+local function set_autocmd()
+	vim.api.nvim_create_autocmd("TextYankPost", {
+		desc = "Highlight when yanking (copying) text",
+		group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+		callback = function()
+			vim.highlight.on_yank()
+		end,
+	})
 
+	if opts.auto_save then
+		vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+			pattern = { "*" },
+			command = "silent! wall",
+			nested = true,
+		})
+	end
+
+	vim.api.nvim_create_autocmd({ "BufEnter" }, {
+		pattern = "*",
+		callback = function()
+			vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
+		end,
+	})
+end
+
+local function set_user_command()
+	vim.api.nvim_create_user_command('PtcInit', pjtCfgs.prettierrc_init_project, {})
+end
 set_keymap()
 set_transparency()
 set_autocmd()
+set_user_command()

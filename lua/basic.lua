@@ -84,25 +84,4 @@ vim.cmd([[
     syntax      enable
     syntax      on
 ]])
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
 
-if require("custom_opts").auto_save then
-    vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-        pattern = { "*" },
-        command = "silent! wall",
-        nested = true,
-    })
-end
-
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = "*",
-    callback = function()
-        vim.opt.formatoptions = vim.opt.formatoptions - { "c", "r", "o" }
-    end,
-})

@@ -14,6 +14,7 @@ return {
 						"%.DS_Store",
 						"%.meta",
 					},
+					path_display={"shorten"}
 				},
 			})
 			local option = { noremap = true, silent = true }
