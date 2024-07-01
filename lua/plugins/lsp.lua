@@ -141,21 +141,21 @@ return {
 		end,
 	},
 
-	{
-		"jay-babu/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"williamboman/mason.nvim",
-			"jose-elias-alvarez/null-ls.nvim",
-		},
-		config = function()
-			require("mason-null-ls").setup({
-				automatic_setup = true,
-				ensure_installed = { "shfmt", "prettier", "stylua","eslint_d"},
-				handlers = {},
-			})
-		end,
-	},
+	-- {
+	-- 	"jay-babu/mason-null-ls.nvim",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	dependencies = {
+	-- 		"williamboman/mason.nvim",
+	-- 		"jose-elias-alvarez/null-ls.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("mason-null-ls").setup({
+	-- 			automatic_setup = true,
+	-- 			ensure_installed = { "shfmt", "prettier", "stylua","eslint_d"},
+	-- 			handlers = {},
+	-- 		})
+	-- 	end,
+	-- },
 	 {
     'MunifTanjim/prettier.nvim',
     config = function()
