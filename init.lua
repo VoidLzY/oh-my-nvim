@@ -35,4 +35,5 @@ require("lazy").setup({
 
 -- Final settings
 require("core")
+require("neovide")
 pcall(require, "custom")

@@ -1,5 +1,6 @@
 HOME = os.getenv("HOME")
 
+
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.updatetime = 200
@@ -65,7 +66,12 @@ vim.opt.swapfile = false -- do not use swap file
 vim.opt.wildmenu = true -- on TAB, complete options for system command
 vim.opt.wildignore =
 	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
+vim.o.guifont="0xProto Nerd Font Mono"
 
+-- -- spellcheck
+-- vim.o.spell=true;
+-- vim.o.spelllang='en_us'
+-- Only show cursorline in the current window and in normal mode.
 -- vim.cmd([[
 --   augroup cline
 --       au!
@@ -83,5 +89,6 @@ vim.cmd([[
     exec        "nohlsearch"
     syntax      enable
     syntax      on
+    autocmd BufRead,BufWritePre * setlocal ff=unix
 ]])
 

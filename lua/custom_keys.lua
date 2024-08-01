@@ -80,5 +80,6 @@ return {
 	-- Use the shortcut to rename the code symbols.
 	lsp_rename = "<leader>re",
 	-- Use the shortcut to format your codes.
-	format = "<C-s>",
+	format = "<C-S>",
 }
+

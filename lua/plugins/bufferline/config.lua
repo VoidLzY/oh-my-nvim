@@ -2,18 +2,18 @@ return function()
 	local bufferline = require("bufferline")
 	bufferline.setup({
 		options = {
-			mode = "buffers", -- set to "tabs" to only show tabpages instead
+			mode = "buffers",                      -- set to "tabs" to only show tabpages instead
 			style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
-			themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
-			--numbers = function(opts)
-			--	return string.format("%s·%s", opts.raise(opts.id), opts.lower(opts.ordinal))
-			--end,
+			themable = true,                       -- allows highlight groups to be overriden i.e. sets highlights as default
+			-- --numbers = function(opts)
+			-- --	return string.format("%s·%s", opts.raise(opts.id), opts.lower(opts.ordinal))
+			-- --end,
 			indicator = {
 				icon = "▎", -- this should be omitted if indicator style is not 'icon'
 				style = "icon",
 			},
-			diagnostics = "nvim_lsp",
-			diagnostics_update_in_insert = false,
+			-- diagnostics = "nvim_lsp",
+			-- diagnostics_update_in_insert = false,
 			offsets = {
 				{
 					filetype = "neo-tree",

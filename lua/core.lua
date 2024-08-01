@@ -1,6 +1,6 @@
 local keys = require("custom_keys")
 local opts = require("custom_opts")
-local pjtCfgs=require("other.projectInit")
+local pjtCfgs = require("other.projectInit")
 
 -- Setup keymapping
 local function set_keymap()
@@ -11,7 +11,6 @@ local function set_keymap()
 	map("n", keys.jump_down_window, "<C-W>j", option)
 	map("n", keys.jump_up_window, "<C-W>k", option)
 	map("n", keys.jump_right_window, "<C-W>l", option)
-
 	option.desc = "向下拆分窗口"
 	map("n", keys.split_down_window, ":split<CR>", option)
 	option.desc = "向左拆分窗口"
@@ -41,9 +40,11 @@ local function set_keymap()
 	]])
 
 	-- Supported by bufferline
-	option.desc = nil
+	option.desc = "切换至Buffline"
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
+	option.desc = "关闭当前Buffline"
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
+	option.desc = nil;
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
 	map("n", keys.pickBuffer2, "<Cmd>BufferLineGoToBuffer 2<CR>", option)
 	map("n", keys.pickBuffer3, "<Cmd>BufferLineGoToBuffer 3<CR>", option)
@@ -157,17 +158,17 @@ end
 -- Set up transparency
 local function set_transparency()
 	local transparency = opts.window_transparency
-	-- Setup global transparency for float window.
-	vim.api.nvim_command(string.format("autocmd FileType * set winblend=%d", transparency))
+	-- Setup global transparency for float windo'.
+	-- vim.api.nvim_command(string.format("autocmd FileType * set 'inblend=%d", transparency))
 	-- Setup global transparency for popup menu.
 	vim.o.pumblend = transparency
 end
 
 -- Set up auto command
 local function set_autocmd()
-	vim.api.nvim_create_autocmd("TextYankPost", {
-		desc = "Highlight when yanking (copying) text",
-		group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	vim.api.nvim_create_autocmd('TextYankPost', {
+		desc = 'Highlight when yanking (copying) text',
+		group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
 		callback = function()
 			vim.highlight.on_yank()
 		end,
@@ -180,7 +181,6 @@ local function set_autocmd()
 			nested = true,
 		})
 	end
-
 	vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		pattern = "*",
 		callback = function()
@@ -190,9 +190,17 @@ local function set_autocmd()
 end
 
 local function set_user_command()
-	vim.api.nvim_create_user_command('PtcInit', pjtCfgs.prettierrc_init_project, {})
+	vim.api.nvim_create_user_command('Jsfmt', pjtCfgs.prettierrc_init_project, {})
+	vim.api.nvim_create_user_command('Chatgpt', require("other.chatgpt").chatgpt, {})
+end
+local function allow_CV_in_neovim()
+	vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('!', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
 end
 set_keymap()
 set_transparency()
 set_autocmd()
 set_user_command()
+allow_CV_in_neovim()

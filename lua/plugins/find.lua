@@ -14,9 +14,10 @@ return {
 						"%.DS_Store",
 						"%.meta",
 					},
-					path_display={"shorten"}
+					path_display={"shorten"},
 				},
 			})
+
 			local option = { noremap = true, silent = true }
 
 			local keys = require("custom_keys")

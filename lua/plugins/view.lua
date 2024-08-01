@@ -67,10 +67,10 @@ return {
 			require("aerial").setup({
 				lazy_load = false,
 				open_automatic = require("custom_opts").auto_open_outline,
-				manage_folds=true,
-				link_folds_to_tree=true,
-				link_tree_to_folds=true,
-				autojump=true,
+				manage_folds = true,
+				link_folds_to_tree = true,
+				link_tree_to_folds = true,
+				autojump = true,
 			})
 		end,
 	},
@@ -78,7 +78,7 @@ return {
 	-- Tab line
 	{
 		"akinsho/bufferline.nvim",
-		version = "v4.1.0",
+		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("plugins/bufferline/config")()

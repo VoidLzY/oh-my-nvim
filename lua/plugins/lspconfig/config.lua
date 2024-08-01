@@ -20,8 +20,18 @@ return function()
 			-- See `:help vim.lsp.*` for documentation on any of the below functions
 			local opts = { buffer = ev.buf }
 			vim.keymap.set("n", require("custom_keys").goto_declaration, vim.lsp.buf.declaration, opts)
-			vim.keymap.set("n", require("custom_keys").goto_definition, require('telescope.builtin').lsp_definitions, opts)
-			vim.keymap.set("n", require("custom_keys").goto_references,require('telescope.builtin').lsp_references, opts)
+			vim.keymap.set(
+				"n",
+				require("custom_keys").goto_definition,
+				require("telescope.builtin").lsp_definitions,
+				opts
+			)
+			vim.keymap.set(
+				"n",
+				require("custom_keys").goto_references,
+				require("telescope.builtin").lsp_references,
+				opts
+			)
 			vim.keymap.set("n", require("custom_keys").goto_impl, vim.lsp.buf.implementation, opts)
 			vim.keymap.set("n", require("custom_keys").lsp_rename, vim.lsp.buf.rename, opts)
 			vim.keymap.set("n", require("custom_keys").format, function()
@@ -37,9 +47,20 @@ return function()
 			end, opts)
 			vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+			local client = vim.lsp.get_client_by_id(ev.data.client_id)
+			if client and client.server_capabilities.documentHighlightProvider then
+				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+					buffer =ev.buf,
+					callback = vim.lsp.buf.document_highlight,
+				})
+
+				vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+					buffer =ev.buf,
+					callback = vim.lsp.buf.clear_references,
+				})
+			end
 		end,
 	})
-
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
@@ -53,7 +74,7 @@ return function()
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
