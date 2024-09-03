@@ -11,6 +11,7 @@ return function()
 				-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
 			end,
 		},
+		completion = { completeopt = 'menu,menuone,noinsert' },
 		window = {
 			completion = cmp.config.window.bordered({
 				border = "rounded",

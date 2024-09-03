@@ -1,6 +1,6 @@
 local keys = require("custom_keys")
 local opts = require("custom_opts")
-local pjtCfgs=require("other.projectInit")
+local pjtCfgs = require("other.projectInit")
 
 -- Setup keymapping
 local function set_keymap()
@@ -41,9 +41,11 @@ local function set_keymap()
 	]])
 
 	-- Supported by bufferline
-	option.desc = nil
+	option.desc = "切换至Buffline"
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
+	option.desc = "关闭当前Buffline"
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
+	option.desc = nil
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
 	map("n", keys.pickBuffer2, "<Cmd>BufferLineGoToBuffer 2<CR>", option)
 	map("n", keys.pickBuffer3, "<Cmd>BufferLineGoToBuffer 3<CR>", option)
@@ -192,7 +194,15 @@ end
 local function set_user_command()
 	vim.api.nvim_create_user_command('PtcInit', pjtCfgs.prettierrc_init_project, {})
 end
+
+local function allow_CV_in_neovim()
+	vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('!', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+end
 set_keymap()
 set_transparency()
 set_autocmd()
 set_user_command()
+allow_CV_in_neovim()

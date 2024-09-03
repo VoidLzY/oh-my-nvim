@@ -13,7 +13,7 @@ return {
 
 	split_right_window = "<leader>ll",
 	split_down_window = "<leader>jj",
-	colse_window = "<A-w>",
+	colse_window = "<M-w>",
 	-- View other usage of the plugin: https://github.com/akinsho/bufferline.nvim
 	-- Use the shortcut to pick a buffer tab.
 	pick_tab = "<leader>tt",
