@@ -8,13 +8,13 @@ return {
 					enable = true,
 					disable = {},
 				},
-				ensure_installed = { "markdown", "markdown_inline", "regex" },
+				ensure_installed = { "markdown" },
 				sync_install = false,
 				auto_install = true,
 				ignore_install = {},
 
 				highlight = {
-					enable = true,
+					enable =true,
 					disable = {},
 					disable = function(lang, buf)
 						local max_filesize = 100 * 1024 -- 100 KB
@@ -30,14 +30,6 @@ return {
 					enable = true,
 				},
 			})
-			require("nvim-treesitter.configs").setup({
-				highlight = {
-					enable = true,
-					-- additional_vim_regex_highlighting = true, -- DO NOT SET THIS
-				},
-			})
-			-- let it to use 'markdown' parser for mdx filetype.
-			vim.treesitter.language.register("markdown", "mdx")
 		end,
 	},
 
@@ -53,37 +45,5 @@ return {
 		end,
 	},
 
-	-- Spell Check
-	{
-		"ravibrock/spellwarn.nvim",
-		event = "VeryLazy",
-		-- config = true,
-		config = function()
-			require("spellwarn").setup({
-				event = { -- event(s) to refresh diagnostics on
-					"CursorHold",
-					"TextChanged",
-					"TextChangedI",
-					"TextChangedP",
-					"TextChangedT",
-				},
-				ft_config = { -- filetypes to override ft_default for
-					alpha   = false,
-					help    = false,
-					lazy    = false,
-					lspinfo = false,
-					mason   = false,
-				},
-				ft_default = true, -- whether to enable or disable for all filetypes by default
-				max_file_size = nil, -- maximum file size to check in lines (nil for no limit)
-				severity = { -- severity for each spelling error type (false to disable)
-					spellbad   = "WARN",
-					spellcap   = "HINT",
-					spelllocal = "HINT",
-					spellrare  = "INFO",
-				},
-				prefix = "possible misspelling(s): ", -- prefix for each diagnostic message
-			})
-		end
-	}
+	
 }
