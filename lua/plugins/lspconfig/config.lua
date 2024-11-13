@@ -84,11 +84,8 @@ return function()
 		--    https://github.com/pmizio/typescript-tools.nvim
 		--
 		-- But for many setups, the LSP (`tsserver`) will work just fine
-		-- tsserver = {
-		-- 	'pmizio/typescript-tools.nvim',
-		-- 	dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-		-- 	opts = {},
-		-- },
+		-- tsserver = {},
+		ts_ls = {},
 		--
 
 		lua_ls = {
