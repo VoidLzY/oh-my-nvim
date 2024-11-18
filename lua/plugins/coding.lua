@@ -106,13 +106,6 @@ return {
 		end,
 	},
 
-	-- guess indent
-	{
-		"nmac427/guess-indent.nvim",
-		config = function()
-			require("guess-indent").setup({})
-		end,
-	},
 	-- comment
 	{
 		"numToStr/Comment.nvim",
