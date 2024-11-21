@@ -110,7 +110,7 @@ return {
 			--keymap设置
 			local keymap = vim.keymap.set
 			local opts = { noremap = true }
-			keymap("n", "<leader>f", "<cmd>Format<CR>", opts)
+			keymap("n", require("custom_keys").format, "<cmd>Format<CR>", opts)
 			keymap("n", "<leader>F", "<cmd>Formatwrite<CR>", opts)
 		end
 	}

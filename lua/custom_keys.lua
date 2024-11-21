@@ -26,7 +26,6 @@ return {
 	pickBuffer6 = "<leader>6",
 	pickBuffer7 = "<leader>7",
 	pickBuffer8 = "<leader>8",
-	pickBuffer9 = "<leader>9",
 
 	-- View other usage of the plugin: https://github.com/nvim-neo-tree/neo-tree.nvim
 	-- Use the shortcut to open or close file explorer.
@@ -81,5 +80,8 @@ return {
 	lsp_rename = "<leader>re",
 	-- Use the shortcut to format your codes.
 	format = "<C-S>",
+    -- visial mod box selection funciton
+    boxSeletion1 = "<leader>9",
+    boxSeletion2 = "<leader>0",
 }
 

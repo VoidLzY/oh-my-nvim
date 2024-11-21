@@ -53,7 +53,6 @@ local function set_keymap()
 	map("n", keys.pickBuffer6, "<Cmd>BufferLineGoToBuffer 6<CR>", option)
 	map("n", keys.pickBuffer7, "<Cmd>BufferLineGoToBuffer 7<CR>", option)
 	map("n", keys.pickBuffer8, "<Cmd>BufferLineGoToBuffer 8<CR>", option)
-	map("n", keys.pickBuffer9, "<Cmd>BufferLineGoToBuffer 9<CR>", option)
 
 	-- Supported by nvim-tree
 	map("n", keys.file_explorer, ":Neotree position=left source=filesystem action=show toggle=true<CR>", option)
@@ -153,6 +152,10 @@ local function set_keymap()
 
 	-- Supported by nvim-session-manager
 	map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
+
+    --box Selection,with plug treesitter
+    map("n",keys.boxSeletion1,"[m0v$%",option)
+    map("n",keys.boxSeletion2,"]m0v$%",option)
 end
 
 -- Set up transparency
