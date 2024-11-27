@@ -132,4 +132,6 @@ return function()
 			end,
 		},
 	}
+
+    require('lspconfig').gdscript.setup({})
 end
