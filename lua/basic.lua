@@ -1,5 +1,7 @@
 HOME = os.getenv("HOME")
 
+--shell
+-- vim.opt.shell="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
