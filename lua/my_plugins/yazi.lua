@@ -2,6 +2,7 @@ return
 ---@type LazySpec
 {
   "mikavilpas/yazi.nvim",
+  commit="28ebf7eceb08ae47dbc988f0e93593c4c9f15a05",--更到最新yazi窗口显示空了BUG，等后续修复了再更新
   event = "VeryLazy",
   keys = {
     -- 👇 in this section, choose your own keymappings!
