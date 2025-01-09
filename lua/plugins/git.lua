@@ -26,6 +26,18 @@ return {
 			})
 		end,
 	},
-
+    -- 用来查看文件变化,配合git使用
 	{ "sindrets/diffview.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    -- 图形化git
+    {
+          "NeogitOrg/neogit",
+          dependencies = {
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
+
+            -- Only one of these is needed.
+            "nvim-telescope/telescope.nvim", -- optional
+          },
+          config = true
+    }
 }
