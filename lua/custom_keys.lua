@@ -61,6 +61,8 @@ return {
 	diff_open = "<leader>df",
 	-- Use the shortcut to close 'git diff'.
 	diff_close = "<leader>dc",
+    -- Use the shortcut to open 'neogit'
+    neogit = "<leader>ng",
 
 	-- View other usage of the plugin: https://github.com/mrjones2014/smart-splits.nvim
 	-- Use the shortcut to resize the window, <control + alt + hjkl>
