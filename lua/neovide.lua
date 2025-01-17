@@ -16,10 +16,19 @@ local function neovidesetting()
         vim.g.neovide_hide_mouse_when_typing = true
         -- cursor particles 鼠标特效
         vim.g.neovide_cursor_vfx_mode = "railgun"
-        -- -- 背景颜色,macOS only
-        -- vim.g.neovide_transparency = 0.0
+        -- -- 背景颜色 0.14后的版本都可以
+        vim.g.neovide_transparency = 0.85
+        vim.g.neovide_normal_opacity = 0.85
+        -- macOS only
         -- vim.g.transparency = 0.8
         -- vim.g.neovide_background_color = "#0f1117" .. alpha()
+        -- windows only
+        vim.g.neovide_title_background_color = string.format(
+                "%x",
+                vim.api.nvim_get_hl(0, {id=vim.api.nvim_get_hl_id_by_name("Normal")}).bg
+        )
+        vim.g.neovide_title_text_color = "pink"
+
     end
 end
 
