@@ -4,8 +4,8 @@ return{
       opts = {},
         config=function ()
         require('fittencode').setup({
-                api_key = "sk-f9413560dfd042c0a6eaf466c3b102bd", -- 设置 API 密钥
-                model="deepseek-chat" ,
+                -- api_key = "sk-f9413560dfd042c0a6eaf466c3b102bd", -- 设置 API 密钥
+                -- model="deepseek-chat" ,
                 language = "auto", -- 自动检测语言
                 enable_snippets = true, -- 启用代码片段生成
                 enable_completion = true, -- 启用代码补全
