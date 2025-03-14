@@ -31,6 +31,7 @@ local function set_keymap()
 	autocmd FileType markdown setlocal wrap
 	]])
 
+
 	-- Supported by bufdelete
 	vim.cmd([[
 	cnoreabbrev bdelete Bdelete
@@ -159,6 +160,7 @@ local function set_keymap()
     --box Selection,with plug treesitter
     map("n",keys.boxSeletion1,"[m0v$%",option)
     map("n",keys.boxSeletion2,"]m0v$%",option)
+
 end
 
 -- Set up transparency
@@ -201,9 +203,11 @@ local function set_user_command()
 end
 local function allow_CV_in_neovim()
 	vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
+    
 	vim.api.nvim_set_keymap('!', '<C-v>', '<C-R>+', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("v",keys.copy_to_clipboard,"\"+y",{ noremap = true, silent = true })
 end
 set_keymap()
 set_transparency()

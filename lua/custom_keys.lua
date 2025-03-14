@@ -85,5 +85,8 @@ return {
     -- visial mod box selection funciton
     boxSeletion1 = "<leader>9",
     boxSeletion2 = "<leader>0",
+
+    --使用系统剪切板
+    copy_to_clipboard = "<leader>y",
 }
 
