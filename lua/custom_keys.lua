@@ -88,5 +88,16 @@ return {
 
     --使用系统剪切板
     copy_to_clipboard = "<leader>y",
+
+    --dap
+    start_dap="F5",
+    step_over="F10",
+    step_into="F11",
+    step_out="F12",
+    toggle_breakpoint="<leader>b",
+    set_breakpoint="<leader>B",--设置条件断点
+    log_breakpoints="<leader>lp",--查看断点日志
+    repl_open="<leader>dr",--打开repl窗口
+    run_last="<leader>dl",--运行上一次调试
 }
 
