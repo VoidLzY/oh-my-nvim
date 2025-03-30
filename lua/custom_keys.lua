@@ -90,14 +90,19 @@ return {
     copy_to_clipboard = "<leader>y",
 
     --dap
-    start_dap="F5",
-    step_over="F10",
-    step_into="F11",
-    step_out="F12",
+    start_dap="<F5>",
+    step_over="<F10>",
+    step_into="<F11>",
+    step_out="<F12>",
+    dap_close="<leader>dq",
+    dap_terminate="<leader>dQ",
+    dap_restart="<leader>dr",
+    dap_repl_toggle="<leader>dR",
+    dap_hover="<leader>dh",
     toggle_breakpoint="<leader>b",
     set_breakpoint="<leader>B",--设置条件断点
     log_breakpoints="<leader>lp",--查看断点日志
-    repl_open="<leader>dr",--打开repl窗口
-    run_last="<leader>dl",--运行上一次调试
+    clear_breakpoints="<leader>dD",--清除断点
+    dap_toggle_ui="<leader>du"
 }
 
