@@ -81,7 +81,8 @@ return {
 					"typescript",
 					"typescriptreact",
 					"yaml",
-					"rust"
+					"rust",
+                    "python"
 				},
 				-- 可以添加其他 prettier 的配置选项
 			})
