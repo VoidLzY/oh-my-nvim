@@ -66,9 +66,6 @@ local function set_keymap()
 	map("n", keys.diff_open, ":DiffviewOpen<CR>", option)
 	map("n", keys.diff_close, ":DiffviewClose<CR>", option)
 
-    -- Supported by neogit
-	map("n", keys.neogit, ":Neogit<CR>", option)
-
 	-- Supported by toggleterm
 	-- float terminal
 	local float_terminal_default = require("toggleterm.terminal").Terminal:new({

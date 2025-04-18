@@ -1,3 +1,4 @@
+local custom_keys = require "custom_keys"
 return
 ---@type LazySpec
 {
@@ -7,13 +8,13 @@ return
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
-      "<leader>-",
+      custom_keys.open_yazi_current_file,
       "<cmd>Yazi<cr>",
       desc = "Open yazi at the current file",
     },
     {
       -- Open in the current working directory
-      "<leader>cw",
+      custom_keys.open_yazi_inNvim_file,
       "<cmd>Yazi cwd<cr>",
       desc = "Open the file manager in nvim's working directory" ,
     },

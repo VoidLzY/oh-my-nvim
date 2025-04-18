@@ -61,8 +61,6 @@ return {
 	diff_open = "<leader>df",
 	-- Use the shortcut to close 'git diff'.
 	diff_close = "<leader>dc",
-    -- Use the shortcut to open 'neogit'
-    neogit = "<leader>ng",
 
 	-- View other usage of the plugin: https://github.com/mrjones2014/smart-splits.nvim
 	-- Use the shortcut to resize the window, <control + alt + hjkl>
@@ -103,6 +101,10 @@ return {
     set_breakpoint="<leader>B",--设置条件断点
     log_breakpoints="<leader>lp",--查看断点日志
     clear_breakpoints="<leader>dD",--清除断点
-    dap_toggle_ui="<leader>du"
+    dap_toggle_ui="<leader>du",
+
+    --yazi
+    open_yazi_current_file="<C-y>",
+    open_yazi_inNvim_file="<leader>cw",
 }
 
