@@ -6,7 +6,7 @@ return {
 			require("nvim-ts-autotag").setup()
 		end,
 	},
-    
+
 	-- auto-pairs
 	{
 		"windwp/nvim-autopairs",

@@ -31,7 +31,9 @@ return {
 		end,
 	},
 
-	-- Status line
+    -- ===
+	-- ===底部状态栏===
+    -- ===
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -75,7 +77,9 @@ return {
 		end,
 	},
 
-	-- Tab line
+	-- ===
+	-- ===顶部标签页===
+    -- ===
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",

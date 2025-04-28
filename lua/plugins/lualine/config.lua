@@ -33,7 +33,7 @@ return function()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = vim.g.hardhacker_lualine_theme,
+			theme = 'auto',
 			component_separators = "",
 			section_separators = { left = "", right = "" },
 			disabled_filetypes = {

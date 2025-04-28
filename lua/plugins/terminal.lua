@@ -1,3 +1,6 @@
+-- ===
+-- ===打开终端===
+-- ===
 return {
 	{
 		"akinsho/toggleterm.nvim",
