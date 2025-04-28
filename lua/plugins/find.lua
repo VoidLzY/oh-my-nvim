@@ -5,6 +5,18 @@ return {
 		config = function()
 			require("telescope").setup({
 				defaults = {
+					vimgrep_arguments = {
+						"rg",
+						"--color=never",
+						"--no-heading",
+						"--with-filename",
+						"--line-number",
+						"--column",
+						"--fixed-strings",
+						"--smart-case",
+						"--trim",
+					},
+
 					file_ignore_patterns = {
 						-- "node_modules",
 						".git/",
@@ -14,7 +26,12 @@ return {
 						"%.DS_Store",
 						"%.meta",
 					},
-					path_display={"shorten"},
+					color_devicons = true,
+					prompt_prefix = "🔍 ",
+					selection_caret = " ",
+					path_display = { "truncate" },--"shoreten"是简短的路径
+					file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 				},
 			})
 
