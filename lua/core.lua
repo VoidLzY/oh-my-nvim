@@ -1,6 +1,5 @@
 local keys = require("custom_keys")
 local opts = require("custom_opts")
-local pjtCfgs = require("other.projectInit")
 
 -- Setup keymapping
 local function set_keymap()
@@ -158,6 +157,7 @@ local function set_keymap()
     map("n",keys.boxSeletion1,"[m0v$%",option)
     map("n",keys.boxSeletion2,"]m0v$%",option)
 
+    map("n", keys.open_lazy, ":Lazy<CR>", { noremap = true })
 end
 
 -- Set up transparency
@@ -194,10 +194,6 @@ local function set_autocmd()
 	})
 end
 
-local function set_user_command()
-	vim.api.nvim_create_user_command('Jsfmt', pjtCfgs.prettierrc_init_project, {})
-	vim.api.nvim_create_user_command('Chatgpt', require("other.chatgpt").chatgpt, {})
-end
 local function allow_CV_in_neovim()
 	vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
     
@@ -209,5 +205,4 @@ end
 set_keymap()
 set_transparency()
 set_autocmd()
-set_user_command()
 allow_CV_in_neovim()

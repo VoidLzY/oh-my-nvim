@@ -28,4 +28,16 @@ return {
 	},
     -- 用来查看文件变化,配合git使用
 	{ "sindrets/diffview.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+    -- lazygit
+    {
+            "kdheepak/lazygit.nvim",
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+            },
+            keys = {
+                { "<C-g>", "<cmd>LazyGit<CR>", desc = "Toggle Lazygit" },
+            },
+            config = function()
+                end
+    }
 }

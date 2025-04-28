@@ -4,7 +4,8 @@
 return {
 	-- The default '<leader>' is the space.
 	leader = " ",
-
+    open_lazy="<leader>l",
+    
 	-- Use the shortcut to switch/jump window.
 	jump_left_window = "<C-h>",
 	jump_right_window = "<C-l>",
