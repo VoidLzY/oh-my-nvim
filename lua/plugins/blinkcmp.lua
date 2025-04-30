@@ -47,7 +47,7 @@ return {
 			-- 选择补全项目时显示文档(0.5秒延迟)
 			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 			-- 不预选第一个项目，选中后自动插入该项目文本,俺想让他第一个
-			list = { selection = { preselect = true, auto_insert = true } },
+			list = { selection = { preselect = false, auto_insert = true } },
 		},
 		-- 指定文件类型启用/禁用
 		enabled = function()
@@ -66,6 +66,8 @@ return {
 			-- 调整间距以确保图标对齐
 			nerd_font_variant = "mono",
 		},
+		-- 启用/禁用:方法参数提示
+		signature = { enabled = true },
 
 		-- 已定义启用的提供程序的默认列表，以便您可以扩展它
 		sources = {
@@ -76,7 +78,7 @@ return {
 				"lsp",
 				"path",
 				"snippets",
-        "cmdline",
+				"cmdline",
 			},
 			providers = {
 				-- score_offset设置优先级数字越大优先级越高

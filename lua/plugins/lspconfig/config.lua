@@ -4,9 +4,19 @@ return function()
 	-- Global mappings.
 	-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 	vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-	vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+	vim.keymap.set("n", "<space>-", vim.diagnostic.goto_prev)
+	vim.keymap.set("n", "<space>=", vim.diagnostic.goto_next)
 	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
+  vim.fn.sign_define("DiagnosticSignError", { text = "✖", texthl = "DiagnosticSignError" })
+  vim.fn.sign_define("DiagnosticSignWarn",  { text = "", texthl = "DiagnosticSignWarn" })
+  vim.fn.sign_define("DiagnosticSignHint",  { text = "", texthl = "DiagnosticSignHint" })
+  vim.fn.sign_define("DiagnosticSignInfo",  { text = "", texthl = "DiagnosticSignInfo" })
+	-- 定义高亮组
+	vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#ff0000" })
+	vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#ffff00" })
+	vim.api.nvim_set_hl(0, "DiagnosticSignHint", { fg = "#ffffff" })
+	vim.api.nvim_set_hl(0, "DiagnosticSignInfo", { fg = "#00ffff" })
 
 	-- Use LspAttach autocommand to only map the following keys
 	-- after the language server attaches to the current buffer

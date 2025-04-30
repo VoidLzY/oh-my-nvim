@@ -1,4 +1,4 @@
-local dap = require 'dap'
+local dap = require("dap")
 
 -- NOTE: configure adapters
 -- dap.adapters.codelldb = {
@@ -12,9 +12,9 @@ local dap = require 'dap'
 --   options = { detached = false },
 -- }
 dap.adapters.gdb = {
-  type = 'executable',
-  command = 'gdb',
-  args = { '--interpreter=dap', '--eval-command', 'set print pretty on' },
+	type = "executable",
+	command = "gdb",
+	args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 }
 
 -- -- NOTE: filetype configurations,C++的
@@ -146,40 +146,34 @@ dap.adapters.gdb = {
 --   },
 -- }
 -- dap.configurations.qmt = dap.configurations.python
-        dap.adapters["pwa-node"] = {
-            type = "server",
-            host = "localhost",
-            port = "${port}",
-            executable = {
-                command = "node",
-                -- 💀 Make sure to update this path to point to your installation
-                args = { vim.fn.stdpath("data").."/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}"},
-            }
-        }
-        dap.configurations.javascript = {
-            {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch file",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            },
-        }
-        dap.configurations.typescript = {
-          {
-            type = 'pwa-node',
-            request = 'launch',
-            name = "TypeScript: Launch file",
-            runtimeExecutable = "deno",
-            runtimeArgs = {
-                "run",
-                "--inspect-wait",
-                "--allow-all"
-            },
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            attachSimplePort = 9229,
-          },
-        }
-
+dap.adapters["pwa-node"] = {
+	type = "server",
+	host = "localhost",
+	port = "${port}",
+	executable = {
+		command = "node",
+		-- 💀 Make sure to update this path to point to your installation
+		args = {
+			vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+			"${port}",
+		},
+	},
+}
+dap.configurations.javascript = {
+	{
+		type = "pwa-node",
+		request = "launch",
+		name = "Launch file",
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+	},
+}
+dap.configurations.typescript = {
+	{
+		type = "pwa-node",
+		request = "launch",
+		name = "TypeScript",
+		program = "${file}",
+		cwd = "${workspaceFolder}",	},
+}
 
