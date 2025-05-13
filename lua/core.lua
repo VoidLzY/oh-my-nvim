@@ -30,7 +30,6 @@ local function set_keymap()
 	autocmd FileType markdown setlocal wrap
 	]])
 
-
 	-- Supported by bufdelete
 	vim.cmd([[
 	cnoreabbrev bdelete Bdelete
@@ -44,7 +43,7 @@ local function set_keymap()
 	map("n", keys.pick_tab, ":BufferLinePick<CR>", option)
 	option.desc = "关闭当前Buffline"
 	map("n", keys.closeBuffer, ":Bdelete!<CR>", option)
-	option.desc = nil;
+	option.desc = nil
 	map("n", keys.pickBuffer1, "<Cmd>BufferLineGoToBuffer 1<CR>", option)
 	map("n", keys.pickBuffer2, "<Cmd>BufferLineGoToBuffer 2<CR>", option)
 	map("n", keys.pickBuffer3, "<Cmd>BufferLineGoToBuffer 3<CR>", option)
@@ -153,11 +152,11 @@ local function set_keymap()
 	-- Supported by nvim-session-manager
 	map("n", keys.switch_session, ":SessionManager load_session<CR>", option)
 
-    --box Selection,with plug treesitter
-    map("n",keys.boxSeletion1,"[m0v$%",option)
-    map("n",keys.boxSeletion2,"]m0v$%",option)
+	--box Selection,with plug treesitter
+	map("n", keys.boxSeletion1, "[m0v$%", option)
+	map("n", keys.boxSeletion2, "]m0v$%", option)
 
-    map("n", keys.open_lazy, ":Lazy<CR>", { noremap = true })
+	map("n", keys.open_lazy, ":Lazy<CR>", { noremap = true })
 end
 
 -- Set up transparency
@@ -171,9 +170,9 @@ end
 
 -- Set up auto command
 local function set_autocmd()
-	vim.api.nvim_create_autocmd('TextYankPost', {
-		desc = 'Highlight when yanking (copying) text',
-		group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+	vim.api.nvim_create_autocmd("TextYankPost", {
+		desc = "Highlight when yanking (copying) text",
+		group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 		callback = function()
 			vim.highlight.on_yank()
 		end,
@@ -195,12 +194,8 @@ local function set_autocmd()
 end
 
 local function allow_CV_in_neovim()
-	vim.api.nvim_set_keymap('', '<C-v>', '+p<CR>', { noremap = true, silent = true })
-    
-	vim.api.nvim_set_keymap('!', '<C-v>', '<C-R>+', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap('t', '<C-v>', '<C-R>+', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap('v', '<C-v>', '<C-R>+', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap("v",keys.copy_to_clipboard,"\"+y",{ noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<C-v>", "vf", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("v", keys.copy_to_clipboard, '"+y', { noremap = true, silent = true })
 end
 set_keymap()
 set_transparency()
