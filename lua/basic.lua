@@ -10,7 +10,7 @@ vim.opt.updatetime = 200
 -- Basic settings
 vim.opt.encoding = "utf-8"
 vim.opt.backspace = "indent,eol,start" -- backspace works on every char in insert mode
-vim.opt.completeopt = "menuone,noselect"
+-- vim.opt.completeopt = "menuone,noselect" --即使只有一个匹配项也显示补全菜单,不自动选中第一项，需手动选择（避免误输入）
 vim.opt.history = 1000
 vim.opt.startofline = true
 
@@ -26,9 +26,9 @@ vim.opt.synmaxcol = 300
 vim.opt.laststatus = 3
 
 -- vim.opt.list = false -- do not display white characters
-vim.o.foldmethod='expr'
-vim.o.foldexpr='nvim_treesitter#foldexpr()'
-vim.opt.foldenable =true
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = true
 vim.opt.foldlevel = 4 -- limit folding to 4 levels
 -- vim.opt.foldmethod = "syntax" -- use language syntax to generate folds
 vim.opt.wrap = false --do not wrap lines even if very long
@@ -53,9 +53,9 @@ vim.opt.mps = vim.o.mps .. ",<:>"
 -- White characters
 vim.opt.autoindent = true
 vim.opt.smartindent = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4 -- indentation rule
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2 -- indentation rule
 vim.opt.formatoptions = "qnj1" -- q  - comment formatting; n - numbered lists; j - remove comment when joining lines; 1 - don't break after one-letter word
 vim.opt.expandtab = true -- expand tab to spaces
 
@@ -93,4 +93,3 @@ vim.cmd([[
     syntax      on
     autocmd BufRead,BufWritePre * setlocal ff=unix
 ]])
-
