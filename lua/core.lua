@@ -194,7 +194,7 @@ local function set_autocmd()
 end
 
 local function allow_CV_in_neovim()
-	vim.api.nvim_set_keymap("n", "<C-v>", "vf", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", keys.select_text, "vf", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("v", keys.copy_to_clipboard, '"+y', { noremap = true, silent = true })
 end
 set_keymap()

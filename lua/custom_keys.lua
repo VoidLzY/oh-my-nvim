@@ -87,6 +87,9 @@ return {
 
     --使用系统剪切板
     copy_to_clipboard = "<leader>y",
+  
+    --快捷框选内容
+    select_text = "<leader>v",
 
     --dap
     start_dap="<F5>",
