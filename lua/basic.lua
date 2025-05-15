@@ -70,6 +70,9 @@ vim.opt.wildignore =
 	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
 vim.o.guifont="0xProto Nerd Font Mono"
 
+
+--共享系统剪切
+vim.opt.clipboard= 'unnamedplus'
 -- -- spellcheck
 -- vim.o.spell=true;
 -- vim.o.spelllang='en_us'
