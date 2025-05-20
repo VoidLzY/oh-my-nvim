@@ -1,0 +1,9 @@
+{
+  "sec":{
+    "prefix": "sec",
+		"body": [
+		"/** ${0} */"	
+		],
+		"description": "comment"
+  },
+}
