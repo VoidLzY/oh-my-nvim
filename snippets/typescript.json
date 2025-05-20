@@ -6,4 +6,13 @@
 		],
 		"description": "comment"
   },
+  "sec2": {
+		"prefix": "sec2",
+		"body": [
+			"/**",
+			" * ${0}",
+			" */"
+		],
+		"description": "Section comment"
+	}
 }
