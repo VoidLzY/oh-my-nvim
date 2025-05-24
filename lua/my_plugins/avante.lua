@@ -9,26 +9,25 @@ return {
 		-- behaviour = {
 		--  enable_cursor_planning_mode = true, -- enable cursor planning mode!
 		-- },
-		provider = "openrouter",
-		vendors = {
-			openrouter = {
-				__inherited_from = "openai",
-				disable_tools = true,
-				endpoint = "https://openrouter.ai/api/v1",
-				api_key_name = "OPENROUTER_API_KEY",
-				model = "deepseek/deepseek-chat-v3-0324:free",
-			},
-		},
-		-- provider = "deepseek",
+		-- provider = "openrouter",
 		-- vendors = {
-		--  deepseek = {
-		--    __inherited_from = "openai",
-		--    api_key_name = "DEEPSEEK_API_KEY",
-		--    endpoint = "https://api.deepseek.com",
-		--    model = "deepseek-chat",
-		--  },
+		-- 	openrouter = {
+		-- 		__inherited_from = "openai",
+		-- 		disable_tools = true,
+		-- 		endpoint = "https://openrouter.ai/api/v1",
+		-- 		api_key_name = "OPENROUTER_API_KEY",
+		-- 		model = "deepseek/deepseek-chat-v3-0324:free",
+		-- 	},
 		-- },
-		-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
+		provider = "deepseek",
+		vendors = {
+			deepseek = {
+				__inherited_from = "openai",
+				api_key_name = "LLM_KEY",
+				endpoint = "https://api.deepseek.com",
+				model = "deepseek-coder",
+			},
+		}, -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		system_prompt = function()
 			local hub = require("mcphub").get_hub_instance()
 			if not hub then
