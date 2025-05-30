@@ -8,10 +8,10 @@ return function()
 	vim.keymap.set("n", "<space>=", vim.diagnostic.goto_next)
 	vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
-  vim.fn.sign_define("DiagnosticSignError", { text = "✖", texthl = "DiagnosticSignError" })
-  vim.fn.sign_define("DiagnosticSignWarn",  { text = "", texthl = "DiagnosticSignWarn" })
-  vim.fn.sign_define("DiagnosticSignHint",  { text = "", texthl = "DiagnosticSignHint" })
-  vim.fn.sign_define("DiagnosticSignInfo",  { text = "", texthl = "DiagnosticSignInfo" })
+	vim.fn.sign_define("DiagnosticSignError", { text = "✖", texthl = "DiagnosticSignError" })
+	vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
+	vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+	vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
 	-- 定义高亮组
 	vim.api.nvim_set_hl(0, "DiagnosticSignError", { fg = "#ff0000" })
 	vim.api.nvim_set_hl(0, "DiagnosticSignWarn", { fg = "#ffff00" })
@@ -71,6 +71,7 @@ return function()
 			end
 		end,
 	})
+
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	-- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
@@ -131,6 +132,9 @@ return function()
 	require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 	require("mason-lspconfig").setup({
+		automatic_enable = {
+			exclude = {},
+		},
 		handlers = {
 			function(server_name)
 				local server = servers[server_name] or {}

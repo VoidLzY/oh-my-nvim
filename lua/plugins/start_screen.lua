@@ -1,3 +1,6 @@
+-- ===
+-- === 开屏启动页
+-- ===
 return {
 	{
 		"goolord/alpha-nvim",

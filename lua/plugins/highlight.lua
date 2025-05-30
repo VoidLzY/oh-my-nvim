@@ -1,3 +1,6 @@
+-- ===
+-- === 代码高亮
+-- ===
 return {
 	-- Syntax highlighting
 	{
