@@ -4,7 +4,7 @@ return{
         'mfussenegger/nvim-dap',
         lazy = true,
         config = function()
-            require 'config.debugger'
+            require 'plugins.dap.debugger'
         end,
     },
     {
@@ -12,7 +12,7 @@ return{
         dependencies = { 'mfussenegger/nvim-dap', 'theHamsta/nvim-dap-virtual-text', 'nvim-neotest/nvim-nio' },
         config = function()
             require('nvim-dap-virtual-text').setup({}) -- optional
-            require 'config.dapUI'
+            require 'plugins.dap.dapUI'
         end,
     },
     {

@@ -22,7 +22,6 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 		{ import = "languages" },
-		{ import = "my_plugins" },
 	},
 	ui = {
 		border = "rounded",
