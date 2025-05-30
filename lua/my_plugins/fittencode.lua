@@ -1,3 +1,6 @@
+-- ===
+-- === AI助手，代码补全
+-- ===
 return{
     {
       'luozhiya/fittencode.nvim',
