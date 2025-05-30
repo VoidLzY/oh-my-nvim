@@ -43,8 +43,8 @@ return {
 		end,
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-	-- build = "make",
-	build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false", -- for windows
+	build = "make",
+	-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false", -- for windows
 	dependencies = {
 		"ravitemer/mcphub.nvim",
 		"nvim-treesitter/nvim-treesitter",
