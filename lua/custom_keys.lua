@@ -74,6 +74,8 @@ return {
 	-- Goto  I use the telescope type gr
 	goto_definition = "gd",
 	goto_references = "gr",
+	-- 查找变量赋值位置
+	find_var_write = "<leader>gw",
 	goto_declaration = "gD",
 	goto_impl = "gi",
 	-- goto_back           = "<C-o>",
