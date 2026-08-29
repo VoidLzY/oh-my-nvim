@@ -53,6 +53,22 @@ local function set_keymap()
 	map("n", keys.pickBuffer7, "<Cmd>BufferLineGoToBuffer 7<CR>", option)
 	map("n", keys.pickBuffer8, "<Cmd>BufferLineGoToBuffer 8<CR>", option)
 
+	-- <C-o> 返回上个光标位置时，如果离开了某个文件，就关闭离开的那个 buffer 页签
+	map("n", "<C-o>", function()
+		local cur = vim.api.nvim_get_current_buf()
+		vim.cmd.normal({ vim.api.nvim_replace_termcodes("<C-o>", true, true, true), bang = true })
+		local new = vim.api.nvim_get_current_buf()
+		if
+			cur ~= new
+			and vim.api.nvim_buf_is_valid(cur)
+			and not vim.bo[cur].modified
+			and #vim.fn.win_findbuf(cur) == 0
+			and vim.bo[cur].buftype == ""
+		then
+			vim.cmd("Bdelete " .. cur)
+		end
+	end, option)
+
 	-- Supported by nvim-tree
 	-- map("n", keys.file_explorer, ":Neotree position=left source=filesystem action=show toggle=true<CR>", option)
 	-- map("n", keys.git_status, ":Neotree position=float source=git_status action=show toggle=true<CR>", option)
