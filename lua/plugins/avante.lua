@@ -20,12 +20,12 @@ return {
 		-- 	},
 		-- },
 		provider = "deepseek",
-		vendors = {
+		providers = {
 			deepseek = {
 				__inherited_from = "openai",
 				api_key_name = "LLM_KEY",
 				endpoint = "https://api.deepseek.com",
-				model = "deepseek-coder",
+				model = "deepseek-chat",
 			},
 		}, -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
 		system_prompt = function()
@@ -74,13 +74,6 @@ return {
 				},
 			},
 		},
-		-- {
-		--  -- Make sure to set this up properly if you have lazy=true
-		--  "MeanderingProgrammer/render-markdown.nvim",
-		--  opts = {
-		--    file_types = { "markdown", "Avante" },
-		--  },
-		--  ft = { "markdown", "Avante" },
-		-- },
+		-- markdown 渲染见 plugins/markdown.lua，已包含 Avante 窗口
 	},
 }
