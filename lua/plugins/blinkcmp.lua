@@ -2,7 +2,6 @@ return {
 	"saghen/blink.cmp",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		"Kaiser-Yang/blink-cmp-avante",
 		"mikavilpas/blink-ripgrep.nvim",
 	},
 	version = "*",
@@ -78,15 +77,9 @@ return {
 				"path",
 				"snippets",
 				"cmdline",
-				"avante",
 			},
 			providers = {
 				-- score_offset设置优先级数字越大优先级越高
-				avante = {
-					module = "blink-cmp-avante",
-					name = "Avante",
-					score_offset = 6,
-				},
 				buffer = { score_offset = 5 },
 				ripgrep = {
 					module = "blink-ripgrep",
